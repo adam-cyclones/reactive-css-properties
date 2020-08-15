@@ -1,0 +1,24 @@
+{
+  "name": "reactive-css-properties",
+  "version": "1.1.0",
+  "description": "Set css custom properties and react to changes in realtime from JavaScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/rx-dom": "7.0.0",
+    "rx-dom": "7.0.3"
+  },
+  "devDependencies": {
+    "jest": "26.4.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": [
+    "css",
+    "reactive",
+    "javascript"
+  ]
+}
