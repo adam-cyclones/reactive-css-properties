@@ -4,15 +4,15 @@
   "description": "Set css custom properties and react to changes in realtime from JavaScript",
   "main": "dist/index.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html",
+    "build": "tsc -p tsconfig.json",
     "test": "jest"
   },
   "dependencies": {
-    "@types/rx-dom": "7.0.0",
     "rx-dom": "7.0.3"
   },
   "devDependencies": {
+    "@types/rx-dom": "7.0.0",
+    "typescript": "^3.9.7",
     "jest": "26.4.0",
     "parcel-bundler": "^1.6.1"
   },

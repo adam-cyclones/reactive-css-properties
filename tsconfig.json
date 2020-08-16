@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "commonjs",
-    "jsx": "preserve",
+    "module": "ES6",
     "esModuleInterop": true,
-    "sourceMap": true,
-    "allowJs": true,
+    "declaration": true,
+    "allowJs": false,
     "target": "ES6",
     "lib": [
       "es6",
@@ -13,6 +12,13 @@
     ],
     "rootDir": "src",
     "moduleResolution": "node",
-    "outDir": "target"
-  }
+    "outDir": "dist"
+  },
+  "files": [
+    "./src/index.ts"
+  ],
+  "exclude": [
+    "test",
+    "**/node_modules/**"
+  ]
 }
