@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "ES6",
     "esModuleInterop": true,
     "declaration": true,
     "allowJs": false,
@@ -11,8 +10,7 @@
       "dom"
     ],
     "rootDir": "src",
-    "moduleResolution": "node",
-    "outDir": "dist"
+    "moduleResolution": "node"
   },
   "files": [
     "./src/index.ts"

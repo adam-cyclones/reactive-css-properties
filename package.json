@@ -2,9 +2,10 @@
   "name": "reactive-css-properties",
   "version": "1.1.0",
   "description": "Set css custom properties and react to changes in realtime from JavaScript",
-  "main": "dist/index.js",
+  "main": "target/commonjs/index.js",
+  "module": "target/esm/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -b tsconfig.commonjs.json tsconfig.esm.json",
     "test": "jest"
   },
   "dependencies": {
