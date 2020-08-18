@@ -1,5 +1,4 @@
 import { Nullable, StringCastable } from "./utils";
-export declare type CssPropHook = (cssValue: StringCastable) => ICSSPropEntry;
 /**
  * @param {StringCastable} cssValue - A css safe value
  * @param {StringCastable} fallbackValue - A css safe value to be used when css custom properties are not supported
@@ -11,6 +10,35 @@ export interface CSSPropEntity {
 }
 export interface ICSSPropCallable {
     subscribe: CSSPropEntity["subscribe"];
+    /**
+     * @description The key of the variable
+     * */
+    getKey(): string;
+    /**
+     * @description The value of the variable as of now but this might change and is not reactive
+     * */
+    getValue(): string;
+    /**
+     * @description The fallback of the variable as of now but this might change and is not reactive
+   * */
+    getFallbackValue(): string;
+    /**
+     * @description full css var() as it would be used
+     * */
+    getUsage(): string;
+    /**
+     * @description The scope of the variable if provided
+     * @returns scope string or empty string if none provided
+     * */
+    getScope(): string;
+    /**
+     * @description The Symbol fallback value if the browser doesnt support css vars
+     * */
+    fallback?: string;
+    /**
+     * @description The Symbol  value if the browser doesnt support css vars
+     * */
+    value?: string;
 }
 export interface ICSSPropCallbackChangeDetail {
     value: StringCastable;

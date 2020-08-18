@@ -5,13 +5,13 @@ const fromMutationObserver = rxDom.DOM.fromMutationObserver;
 /**
  * Set css variables and react to changes
  * */
-export default (rootEl = document.documentElement) => {
+export default (rootEl = document.documentElement, scope) => {
     /**
      * Tracks previous values against current values
      * */
     const previousValues = {};
     // observe rootEl for style changes
-    const rootStyleOvserver = fromMutationObserver(rootEl, {
+    const rootStyleObserver = fromMutationObserver(rootEl, {
         attributes: true,
         attributeFilter: ["style"],
         attributeOldValue: false,
@@ -24,27 +24,27 @@ export default (rootEl = document.documentElement) => {
     const magicGetterFactory = Object.create(null);
     return new Proxy(magicGetterFactory, {
         get(target, prop, receiver) {
-            const key = `--${camelToSnakeCase(prop)}`;
-            let fallback = '';
+            const key = `--${scope ? `${scope}-` : ''}${camelToSnakeCase(prop)}`;
             // always return a Callable
+            // @ts-ignore
+            const valueSym = Symbol('value');
+            const fallbackSym = Symbol('fallback');
             // @ts-ignore
             target[prop] = callable({
                 function(value, fallbackValue) {
-                    fallback = fallbackValue;
+                    // @ts-ignore
+                    this[valueSym] = fallbackValue || '';
+                    // @ts-ignore
+                    this[fallbackSym] = value;
                     previousValues[key] = {
                         value,
                         oldValue: previousValues[key] ? previousValues[key].value : null
                     };
                     // set CSS variable value to DOM
-                    if (fallbackValue) {
-                        rootEl.style.setProperty(key, `${value}`);
-                    }
-                    else {
-                        rootEl.style.setProperty(key, value.toString());
-                    }
+                    rootEl.style.setProperty(key, value.toString());
                 },
                 subscribe(cb) {
-                    rootStyleOvserver.subscribe((change) => {
+                    rootStyleObserver.subscribe((change) => {
                         // @ts-ignore
                         const mutation = change[0];
                         const { oldValue } = previousValues[key];
@@ -59,8 +59,25 @@ export default (rootEl = document.documentElement) => {
                         }
                     });
                 },
+                getUsage() {
+                    return `var(${key}, ${this.getFallbackValue()})`;
+                },
+                getKey() {
+                    return key;
+                },
+                getValue() {
+                    // @ts-ignore
+                    return this[valueSym];
+                },
+                getFallbackValue() {
+                    // @ts-ignore
+                    return this[fallbackSym] || '';
+                },
+                getScope() {
+                    return scope || '';
+                },
                 valueOf() {
-                    return `var(${key}, ${fallback})`;
+                    return this.getUsage();
                 }
             });
             return Reflect.get(target, prop, receiver);

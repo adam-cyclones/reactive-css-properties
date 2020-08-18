@@ -46,6 +46,24 @@ themeTextColor.subscribe((change) => {
   console.log("Im watching for theme text changes", change);
 });
 ```
+Other useful properties
+``` js
+// Get the full var() to insert into css  
+themeTextColor.getUsage();
+// Get the key
+themeTextColor.getKey();
+// Get the value currently, this is not reactive, use subscribe to get realtime values
+themeTextColor.getValue();
+// Get the fallback value currently, this is not reactive, use subscribe to get realtime values
+themeTextColor..getFallbackValue();
+// Get scope you optionally provided
+themeTextColor.getScope();
+```
+rCSSProps constructor details
+``` js
+rCSSProps(element, scopeString);
+```
+You can optionally provide an element to set the css variables onto, this provides a scope for this element and its descendants, You can also provide a scope string to prefix all variables with scope, this comes in handy whene you have a generated GUID and want to limit the scope to a component.
 
 ---
 

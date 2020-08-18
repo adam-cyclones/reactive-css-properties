@@ -27,8 +27,15 @@ export default (rootEl = document.documentElement, scope) => {
             const key = `--${scope ? `${scope}-` : ''}${camelToSnakeCase(prop)}`;
             // always return a Callable
             // @ts-ignore
+            const valueSym = Symbol('value');
+            const fallbackSym = Symbol('fallback');
+            // @ts-ignore
             target[prop] = callable({
                 function(value, fallbackValue) {
+                    // @ts-ignore
+                    this[valueSym] = fallbackValue;
+                    // @ts-ignore
+                    this[fallbackSym] = value;
                     previousValues[key] = {
                         value,
                         oldValue: previousValues[key] ? previousValues[key].value : null
@@ -57,8 +64,25 @@ export default (rootEl = document.documentElement, scope) => {
                         }
                     });
                 },
+                getUsage() {
+                    return `var(${key}, ${this.getFallbackValue()})`;
+                },
+                getKey() {
+                    return key;
+                },
+                getValue() {
+                    // @ts-ignore
+                    return this[valueSym];
+                },
+                getFallbackValue() {
+                    // @ts-ignore
+                    return this[fallbackSym] || '';
+                },
+                getScope() {
+                    return scope || '';
+                },
                 valueOf() {
-                    return `var(${key})`;
+                    return this.getUsage();
                 }
             });
             return Reflect.get(target, prop, receiver);
