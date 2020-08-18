@@ -5,9 +5,9 @@
   "main": "target/commonjs/index.js",
   "module": "target/esm/index.js",
   "scripts": {
+    "dev": "tsc -b tsconfig.commonjs.json tsconfig.esm.json -w",
     "build": "tsc -b tsconfig.commonjs.json tsconfig.esm.json",
-    "test": "jest",
-    "devserve": "cp -R ./target/esm ./example/ && cd example && python -m SimpleHTTPServer"
+    "test": "jest"
   },
   "dependencies": {
     "rx-dom": "7.0.3"

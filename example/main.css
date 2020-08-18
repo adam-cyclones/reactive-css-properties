@@ -1,0 +1,19 @@
+:root {
+    --theme-background-color: #fff;
+    --theme-text-color: #000;
+    --theme-primary-color: #000;
+    --theme-text-primary-color: #fff;
+    --theme: dark;
+}
+
+body {
+    background-color: var(--theme-background-color);
+    color: var(--theme-text-color);
+    transition: background-color .3s, color .3s ease-in;
+}
+
+button.button-primary {
+    background: var(--theme-primary-color);
+    color: var(--theme-text-primary-color);
+    border: solid var(--theme-primary-color) 1px;
+}

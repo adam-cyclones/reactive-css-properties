@@ -55,7 +55,7 @@ themeTextColor.getKey();
 // Get the value currently, this is not reactive, use subscribe to get realtime values
 themeTextColor.getValue();
 // Get the fallback value currently, this is not reactive, use subscribe to get realtime values
-themeTextColor..getFallbackValue();
+themeTextColor.getFallbackValue();
 // Get scope you optionally provided
 themeTextColor.getScope();
 ```

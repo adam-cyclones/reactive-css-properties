@@ -1,0 +1,19 @@
+{
+  "name": "reactive-css-properties-example",
+  "version": "1.0.0",
+  "description": "A test environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-build": "webpack",
+    "dev-serve": "webpack-dev-server"
+  },
+  "private": true,
+  "dependencies": {
+    "webpack-cli": "^3.3.12",
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "author": "Adam Crockett",
+  "license": "ISC"
+}

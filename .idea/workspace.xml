@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,17 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0535785-5a9d-4db4-b82f-419e9403ec17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/example/esm/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/esm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/types/reactiveCSS.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/example/esm/types/reactiveCSS.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/types/reactiveCSS.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/types/reactiveCSS.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/types/utils.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/types/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/utils/Callable.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/utils/Callable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/utils/camelToSnakeCase.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/esm/utils/camelToSnakeCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/reactiveCSS.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/reactiveCSS.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/commonjs/types/reactiveCSS.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/types/reactiveCSS.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/esm/types/reactiveCSS.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/types/reactiveCSS.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +87,36 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="dev-build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/example/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev-build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev-serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/example/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev-serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="devserve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -89,8 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.devserve" />
+        <item itemvalue="npm.dev-serve" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.dev-build" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.devserve" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597527681227</updated>
       <workItem from="1597527682357" duration="13778000" />
-      <workItem from="1597739262369" duration="3271000" />
+      <workItem from="1597739262369" duration="14186000" />
     </task>
     <servers />
   </component>
@@ -126,25 +169,25 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="568" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1597605719454" />
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597742109144">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597783029105">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597742109144" />
-    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597742109143">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
+    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597783029105">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597742109143" />
-    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597742109143">
+    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
+    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597783029104">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597742109143" />
-    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597742109144">
+    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029104" />
+    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597783029105">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597742109144" />
-    <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup" timestamp="1597602866567">
+    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
+    <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup" timestamp="1597765386903">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1597602866567" />
+    <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1597765386903" />
   </component>
 </project>
