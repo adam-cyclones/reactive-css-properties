@@ -1,6 +1,6 @@
 {
   "name": "reactive-css-properties",
-  "version": "1.3.4",
+  "version": "1.4.4",
   "description": "Set css custom properties and react to changes in realtime from JavaScript",
   "main": "target/commonjs/index.js",
   "module": "target/esm/index.js",
