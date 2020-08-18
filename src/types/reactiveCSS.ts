@@ -1,7 +1,5 @@
 import { Nullable, StringCastable } from "./utils";
 
-export type CssPropHook = (cssValue: StringCastable) => ICSSPropEntry;
-
 /**
  * @param {StringCastable} cssValue - A css safe value
  * @param {StringCastable} fallbackValue - A css safe value to be used when css custom properties are not supported

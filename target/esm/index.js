@@ -5,7 +5,7 @@ const fromMutationObserver = rxDom.DOM.fromMutationObserver;
 /**
  * Set css variables and react to changes
  * */
-export default (rootEl = document.documentElement) => {
+export default (rootEl = document.documentElement, scope) => {
     /**
      * Tracks previous values against current values
      * */
@@ -24,20 +24,18 @@ export default (rootEl = document.documentElement) => {
     const magicGetterFactory = Object.create(null);
     return new Proxy(magicGetterFactory, {
         get(target, prop, receiver) {
-            const key = `--${camelToSnakeCase(prop)}`;
-            let fallback = '';
+            const key = `--${scope ? `${scope}-` : ''}${camelToSnakeCase(prop)}`;
             // always return a Callable
             // @ts-ignore
             target[prop] = callable({
                 function(value, fallbackValue) {
-                    fallback = fallbackValue;
                     previousValues[key] = {
                         value,
                         oldValue: previousValues[key] ? previousValues[key].value : null
                     };
                     // set CSS variable value to DOM
-                    if (fallbackValue) {
-                        rootEl.style.setProperty(key, `${value}`);
+                    if (fallbackValue !== null || fallbackValue) {
+                        rootEl.style.setProperty(key, `${value}, ${fallbackValue}`);
                     }
                     else {
                         rootEl.style.setProperty(key, value.toString());
@@ -60,7 +58,7 @@ export default (rootEl = document.documentElement) => {
                     });
                 },
                 valueOf() {
-                    return `var(${key}, ${fallback})`;
+                    return `var(${key})`;
                 }
             });
             return Reflect.get(target, prop, receiver);

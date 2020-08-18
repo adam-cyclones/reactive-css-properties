@@ -14,7 +14,8 @@ const fromMutationObserver = rxDom.DOM.fromMutationObserver;
  * Set css variables and react to changes
  * */
 export default (
-  rootEl: HTMLElement = document.documentElement
+  rootEl: HTMLElement = document.documentElement,
+  scope?: string
 ): { [k: string]: CSSPropEntity } => {
   /**
    * Tracks previous values against current values
@@ -35,7 +36,7 @@ export default (
   const magicGetterFactory = Object.create(null);
   return new Proxy(magicGetterFactory, {
     get(target: { [key: string]: CSSPropEntity }, prop: string, receiver) {
-      const key = `--${camelToSnakeCase(prop)}`;
+      const key = `--${scope ? `${scope}-` : ''}${camelToSnakeCase(prop)}`;
       // always return a Callable
       // @ts-ignore
       target[prop] = callable<
@@ -49,7 +50,7 @@ export default (
             oldValue: previousValues[key] ? previousValues[key].value : null
           };
           // set CSS variable value to DOM
-          if (fallbackValue) {
+          if (fallbackValue !== null || fallbackValue) {
             rootEl.style.setProperty(key, `${value}, ${fallbackValue}`);
           } else {
             rootEl.style.setProperty(key, value.toString());

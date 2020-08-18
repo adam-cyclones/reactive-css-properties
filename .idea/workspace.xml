@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0535785-5a9d-4db4-b82f-419e9403ec17" name="Default Changelist" comment="" />
+    <list default="true" id="c0535785-5a9d-4db4-b82f-419e9403ec17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/reactiveCSS.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/reactiveCSS.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/commonjs/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/commonjs/types/reactiveCSS.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/types/reactiveCSS.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/esm/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/esm/types/reactiveCSS.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/types/reactiveCSS.d.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +42,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="8hz4fq1f" />
@@ -33,7 +65,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -56,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.devserve" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.devserve" />
       </list>
     </recent_temporary>
   </component>
@@ -69,34 +101,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597527681227</updated>
-      <workItem from="1597527682357" duration="13149000" />
+      <workItem from="1597527682357" duration="13778000" />
+      <workItem from="1597739262369" duration="519000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="568" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597605719454">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="568" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1597605719454" />
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597609646347">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597613404107">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597609646347" />
-    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597609646346">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597613404107" />
+    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597613404106">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597609646346" />
-    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597609646344">
+    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597613404106" />
+    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597613404106">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597609646344" />
-    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597609646347">
+    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597613404106" />
+    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597613404107">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597609646347" />
+    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597613404107" />
     <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup" timestamp="1597602866567">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
