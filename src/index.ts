@@ -63,9 +63,9 @@ export default (
         function(value: StringCastable, fallbackValue?: StringCastable): void {
           value = value.toString().trim();
           // @ts-ignore
-          this[valueSym] = fallbackValue;
+          this[valueSym] = value || preExistingValue;
           // @ts-ignore
-          this[fallbackSym] = value;
+          this[fallbackSym] = fallbackValue;
           previousValues[key] = {
             value,
             oldValue: previousValues[key] ? previousValues[key].value : preExistingValue || "initial"
@@ -74,8 +74,6 @@ export default (
           rootEl.style.setProperty(key, value.toString());
         },
         subscribe(cb: (change: ICSSPropCallbackChangeDetail) => void): void {
-
-
           rootStyleOvserver.subscribe((change) => {
             // @ts-ignore
             const { oldValue } = previousValues[key];
@@ -83,13 +81,12 @@ export default (
               .getComputedStyle(rootEl)
               .getPropertyValue(key);
 
-            console.log(change)
             if (oldValue !== newValue && (change as any).length) {
-              console.log(cb)
-              cb({
-                value: newValue.trim(),
-                oldValue: oldValue
-              });
+              console.log(rootStyleOvserver)
+              // cb({
+              //   value: newValue.trim(),
+              //   oldValue: oldValue
+              // });
             }
           });
         },
@@ -101,11 +98,11 @@ export default (
         },
         getValue() {
           // @ts-ignore
-          return this[valueSym];
+          return this[valueSym] || preExistingValue || nullValue;
         },
         getFallbackValue() {
           // @ts-ignore
-          return this[fallbackSym] || '';
+          return this[fallbackSym] || nullValue;
         },
         getScope(): string {
           return scope || '';
