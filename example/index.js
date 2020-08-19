@@ -13,6 +13,12 @@ themeBackgroundColor("#fff");
 
 theme.subscribe(({ value }) => {
   themeIndicator.innerText = value;
+  console.log(value)
+  if (value === 'dark') {
+    themeTextColor("red");
+  } else {
+    themeTextColor("blue")
+  }
 });
 
 themeIndicator.innerText = theme.getValue();
@@ -25,7 +31,7 @@ const toggleThemeHandler = ({ target: { id } }) => {
       break;
     case "dark-theme":
       theme("dark");
-      themeTextColor("#fff");
+
       themeBackgroundColor("#000");
       break;
   }

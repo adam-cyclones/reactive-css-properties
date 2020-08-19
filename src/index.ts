@@ -7,8 +7,7 @@ import {
   CSSPropEntity,
   ICSSPropCallable
 } from "./types/reactiveCSS";
-
-const fromMutationObserver = rxDom.DOM.fromMutationObserver;
+import { cssVariableObserver } from './utils/cssVariableObserver';
 
 /**
  * Set css variables and react to changes
@@ -35,13 +34,14 @@ export default (
       const nullValue = 'unset';
 
       // observe rootEl for style changes
-      const rootStyleOvserver = fromMutationObserver(rootEl, {
-        attributes: true,
-        attributeFilter: ["style"],
-        attributeOldValue: false,
-        childList: false,
-        subtree: false
-      });
+      const rootStyleOvserver = cssVariableObserver(rootEl);
+      // const rootStyleOvserver = fromMutationObserver(rootEl, {
+      //   attributes: true,
+      //   attributeFilter: ["style"],
+      //   attributeOldValue: false,
+      //   childList: false,
+      //   subtree: false
+      // });
 
       // values can exist from stylesheets and so to overload them we need to retrieve them
       let preExistingValue = window.getComputedStyle(rootEl).getPropertyValue(key);
@@ -53,6 +53,27 @@ export default (
         value: preExistingValue || nullValue,
         oldValue: previousValues[key] ? previousValues[key].value.toString().trim() : preExistingValue || nullValue
       };
+
+      const subscribeCallback = (cb: (change: ICSSPropCallbackChangeDetail) => void) => (change: MutationRecord[]) => {
+        // @ts-ignore
+        const { oldValue } = previousValues[key];
+        const newValue = window
+          .getComputedStyle(rootEl)
+          .getPropertyValue(key);
+
+        if (oldValue !== newValue && (change as any).length) {
+          // kill the connection while we call the callback,
+          // changing values by calling another prop factory causes
+          // a memory leak, I suspect this is bug
+          rootStyleOvserver.unsubscribe();
+          cb({
+            value: newValue.trim(),
+            oldValue: oldValue
+          });
+          // start listening again
+          rootStyleOvserver.subscribe(cb as any);
+        }
+      }
 
       // @ts-ignore
       target[prop] = callable<
@@ -74,20 +95,7 @@ export default (
           rootEl.style.setProperty(key, value.toString());
         },
         subscribe(cb: (change: ICSSPropCallbackChangeDetail) => void): void {
-          rootStyleOvserver.subscribe((change) => {
-            // @ts-ignore
-            const { oldValue } = previousValues[key];
-            const newValue = window
-              .getComputedStyle(rootEl)
-              .getPropertyValue(key);
-
-            if (oldValue !== newValue && (change as any).length) {
-              cb({
-                value: newValue.trim(),
-                oldValue: oldValue
-              });
-            }
-          });
+          rootStyleOvserver.subscribe( subscribeCallback(cb) );
         },
         getUsage(): string {
           return `var(${key}, ${this.getFallbackValue()})`
