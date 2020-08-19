@@ -82,11 +82,10 @@ export default (
               .getPropertyValue(key);
 
             if (oldValue !== newValue && (change as any).length) {
-              console.log(rootStyleOvserver)
-              // cb({
-              //   value: newValue.trim(),
-              //   oldValue: oldValue
-              // });
+              cb({
+                value: newValue.trim(),
+                oldValue: oldValue
+              });
             }
           });
         },
