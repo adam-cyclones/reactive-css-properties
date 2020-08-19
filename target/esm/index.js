@@ -44,9 +44,9 @@ export default (rootEl = document.documentElement, scope) => {
                 function(value, fallbackValue) {
                     value = value.toString().trim();
                     // @ts-ignore
-                    this[valueSym] = fallbackValue;
+                    this[valueSym] = value || preExistingValue;
                     // @ts-ignore
-                    this[fallbackSym] = value;
+                    this[fallbackSym] = fallbackValue;
                     previousValues[key] = {
                         value,
                         oldValue: previousValues[key] ? previousValues[key].value : preExistingValue || "initial"
@@ -60,9 +60,7 @@ export default (rootEl = document.documentElement, scope) => {
                         const newValue = window
                             .getComputedStyle(rootEl)
                             .getPropertyValue(key);
-                        console.log(change);
                         if (oldValue !== newValue && change.length) {
-                            console.log(cb);
                             cb({
                                 value: newValue.trim(),
                                 oldValue: oldValue
@@ -78,11 +76,11 @@ export default (rootEl = document.documentElement, scope) => {
                 },
                 getValue() {
                     // @ts-ignore
-                    return this[valueSym];
+                    return this[valueSym] || preExistingValue || nullValue;
                 },
                 getFallbackValue() {
                     // @ts-ignore
-                    return this[fallbackSym] || '';
+                    return this[fallbackSym] || nullValue;
                 },
                 getScope() {
                     return scope || '';

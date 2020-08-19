@@ -6,6 +6,8 @@ const themeIndicator = document.getElementById('theme-is-text');
 
 const { theme, themeTextColor, themeBackgroundColor } = cssProps();
 
+console.log('early get value', theme.getValue())
+
 themeTextColor("#000", "#000");
 themeBackgroundColor("#fff");
 

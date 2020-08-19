@@ -23,22 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0535785-5a9d-4db4-b82f-419e9403ec17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/types/reactiveCSS.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/types/reactiveCSS.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/types/utils.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/types/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/utils/Callable.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/utils/Callable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/utils/camelToSnakeCase.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/esm/utils/camelToSnakeCase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/commonjs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/commonjs/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/esm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/esm/index.js" afterDir="false" />
     </list>
@@ -146,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597527681227</updated>
       <workItem from="1597527682357" duration="13778000" />
-      <workItem from="1597739262369" duration="14186000" />
+      <workItem from="1597739262369" duration="17117000" />
     </task>
     <servers />
   </component>
@@ -169,22 +155,22 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="568" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1597605719454" />
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597783029105">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom" timestamp="1597827597577">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
-    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597783029105">
+    <state width="1325" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1597827597577" />
+    <state width="1325" height="283" key="GridCell.Tab.0.center" timestamp="1597827597577">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
-    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597783029104">
+    <state width="1325" height="283" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1597827597577" />
+    <state width="1325" height="283" key="GridCell.Tab.0.left" timestamp="1597827597576">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029104" />
-    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597783029105">
+    <state width="1325" height="283" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1597827597576" />
+    <state width="1325" height="283" key="GridCell.Tab.0.right" timestamp="1597827597577">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597783029105" />
+    <state width="1325" height="283" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1597827597577" />
     <state x="477" y="88" width="838" height="1032" key="search.everywhere.popup" timestamp="1597765386903">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
