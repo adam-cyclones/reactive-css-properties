@@ -9,13 +9,8 @@
     "build": "tsc -b tsconfig.commonjs.json tsconfig.esm.json",
     "test": "jest"
   },
-  "dependencies": {
-    "rx-dom": "7.0.3"
-  },
   "devDependencies": {
-    "@types/rx-dom": "7.0.0",
     "jest": "26.4.0",
-    "parcel-bundler": "^1.6.1",
     "typescript": "^3.9.7"
   },
   "repository": "https://github.com/adam-cyclones/reactive-css-properties",

@@ -1,12 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const rx_dom_1 = __importDefault(require("rx-dom"));
 const camelToSnakeCase_1 = require("./utils/camelToSnakeCase");
 const Callable_1 = require("./utils/Callable");
-const fromMutationObserver = rx_dom_1.default.DOM.fromMutationObserver;
+const cssVariableObserver_1 = require("./utils/cssVariableObserver");
 /**
  * Set css variables and react to changes
  * */
@@ -28,13 +24,14 @@ exports.default = (rootEl = document.documentElement, scope) => {
             const fallbackSym = Symbol('fallback');
             const nullValue = 'unset';
             // observe rootEl for style changes
-            const rootStyleOvserver = fromMutationObserver(rootEl, {
-                attributes: true,
-                attributeFilter: ["style"],
-                attributeOldValue: false,
-                childList: false,
-                subtree: false
-            });
+            const rootStyleOvserver = cssVariableObserver_1.cssVariableObserver(rootEl);
+            // const rootStyleOvserver = fromMutationObserver(rootEl, {
+            //   attributes: true,
+            //   attributeFilter: ["style"],
+            //   attributeOldValue: false,
+            //   childList: false,
+            //   subtree: false
+            // });
             // values can exist from stylesheets and so to overload them we need to retrieve them
             let preExistingValue = window.getComputedStyle(rootEl).getPropertyValue(key);
             if (preExistingValue) {
@@ -43,6 +40,25 @@ exports.default = (rootEl = document.documentElement, scope) => {
             previousValues[key] = {
                 value: preExistingValue || nullValue,
                 oldValue: previousValues[key] ? previousValues[key].value.toString().trim() : preExistingValue || nullValue
+            };
+            const subscribeCallback = (cb) => (change) => {
+                // @ts-ignore
+                const { oldValue } = previousValues[key];
+                const newValue = window
+                    .getComputedStyle(rootEl)
+                    .getPropertyValue(key);
+                if (oldValue !== newValue && change.length) {
+                    // kill the connection while we call the callback,
+                    // changing values by calling another prop factory causes
+                    // a memory leak, I suspect this is bug
+                    rootStyleOvserver.unsubscribe();
+                    cb({
+                        value: newValue.trim(),
+                        oldValue: oldValue
+                    });
+                    // start listening again
+                    rootStyleOvserver.subscribe(cb);
+                }
             };
             // @ts-ignore
             target[prop] = Callable_1.callable({
@@ -59,19 +75,7 @@ exports.default = (rootEl = document.documentElement, scope) => {
                     rootEl.style.setProperty(key, value.toString());
                 },
                 subscribe(cb) {
-                    rootStyleOvserver.subscribe((change) => {
-                        // @ts-ignore
-                        const { oldValue } = previousValues[key];
-                        const newValue = window
-                            .getComputedStyle(rootEl)
-                            .getPropertyValue(key);
-                        if (oldValue !== newValue && change.length) {
-                            cb({
-                                value: newValue.trim(),
-                                oldValue: oldValue
-                            });
-                        }
-                    });
+                    rootStyleOvserver.subscribe(subscribeCallback(cb));
                 },
                 getUsage() {
                     return `var(${key}, ${this.getFallbackValue()})`;
