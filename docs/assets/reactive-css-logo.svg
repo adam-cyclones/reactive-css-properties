@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 151 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-409.911,-178.528)">
+        <g transform="matrix(1,0,0,1,-71.6884,-68.9404)">
+            <g transform="matrix(1.13601,0,0,1.22395,388.468,-3.68804)">
+                <text x="79.633px" y="232.87px" style="font-family:'DoHyeon-Regular', 'Do Hyeon';font-size:53.829px;">re.css</text>
+            </g>
+            <g>
+                <g transform="matrix(0.838101,0,0,0.862854,213.253,186.235)">
+                    <path d="M499.16,122.063L320.184,122.063L320.184,284.315C320.184,290.716 325.526,295.904 332.116,295.904L487.229,295.904C493.818,295.904 499.16,290.716 499.16,284.315L499.16,122.063Z" style="fill:rgb(0,87,231);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,60.1868,-95.6752)">
+                    <g transform="matrix(-288,-3.52698e-14,3.52698e-14,-288,658.01,390.882)">
+                        <path d="M0.531,-0.323L0.488,-0.44L0.624,-0.273L0.301,-0.273L0.301,-0.323L0.531,-0.323Z" style="fill:white;fill-rule:nonzero;"/>
+                    </g>
+                    <g transform="matrix(288,0,0,288,334.816,533.582)">
+                        <path d="M0.531,-0.323L0.488,-0.44L0.624,-0.273L0.301,-0.272L0.301,-0.323L0.531,-0.323Z" style="fill:white;fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
