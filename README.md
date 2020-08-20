@@ -1,4 +1,11 @@
-# Reactive CSS Properties
+<center>
+<h1>Reactive CSS Properties</h1>
+<p>Drive business logic from your styling and styling from your business logic. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
+<a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
+<span>––</span>
+<a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Report a bug</a>
+</center>
+
 
 ## The case for reactive-css-properties
 CSS in JavaScript is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets.
@@ -9,16 +16,19 @@ JavaScript and CSS can now share easily data bi-directionally, the result is tha
 If you open devtools, change a css variable, this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
 
 ## What is the use case?
+- Kill FOUK (flash of un-styled content) for good.
+- Performance benefits over pure CSS-in-JS - cheaper component re-renders
 - Change one variable and have JavaScript set an entire theme's worth of variables.
 - Update a css variable based on screen position or any sensor / event that JavaScript can access that CSS cannot
 - Get CSS variables values and use them in logic
 - Separation of concerns between styling and business logic
 - Dry code
+- SSR supported
 - CSS can be used as configuration which is isomorphic
 - More efficient and natural feeling workflow 
 - Encourage developers to think differently and style variables instead of individual elements on the page, it might just change how you create apps and websites
 
-Related reading:
+*Related reading:*
 - [Javascript Enhanced scss mixins concepts explained](https://dev.to/adam_cyclones/javascript-enhanced-scss-mixins-concepts-explained-3mpo)
 - [Reactive CSS Explained](https://dev.to/adam_cyclones/great-scott-reactive-css-231m)
 
@@ -39,14 +49,15 @@ themeTextColor("#000");
 themeTextColor("#000", "#000");
 ```
 
-Watch for changes
+#### Watch for changes
 ``` js
-// You must subscribe before changing values
+// any themeTextColor calls after this subscription will become reactive
 themeTextColor.subscribe((change) => {
   console.log("Im watching for theme text changes", change);
+  themeTextBackground('#000');
 });
 ```
-Other useful properties
+#### Other useful properties
 ``` js
 // Get the full var() to insert into css  
 themeTextColor.getUsage();
@@ -59,11 +70,12 @@ themeTextColor.getFallbackValue();
 // Get scope you optionally provided
 themeTextColor.getScope();
 ```
-rCSSProps constructor details
+#### rCSSProps constructor details
 ``` js
 rCSSProps(element, scopeString);
 ```
-You can optionally provide an element to set the css variables onto, this provides a scope for this element and its descendants, You can also provide a scope string to prefix all variables with scope, this comes in handy whene you have a generated GUID and want to limit the scope to a component.
+You can optionally provide an element to set the css variables onto, this provides a scope for this element and its descendants, You can also provide a scope string to prefix all variables with scope, this comes in handy when you have a generated GUID and want to limit the scope to a component.
+For custom elements, internally the `element` should be the `this` keyword, externally the `element` should be the `<custom-element>` known as `:host`.
 
 ---
 
@@ -75,7 +87,7 @@ body {
     color: var(--theme-text-color);
 }
 ```
-You could even define the variable before JavaScript has loaded, this is recommended to provide some styling, also to help keep track of variables in use.
+You should define the variable before JavaScript has loaded, this is **recommended** to provide some placeholder styling before JavaScript loads and takes ownership, also to help keep track of variables in use.
 ``` css
 :root {
     --theme-text-color: #C0FF33;
@@ -83,7 +95,7 @@ You could even define the variable before JavaScript has loaded, this is recomme
 ```
 #### From JavaScript
 CSS in JavaScript is not essential, however it is useful, with the workflow described above, you provide styling with or without JavaScript, removing one of the major cases against CSS in JS.
-Using the variable is in a js string is simple, just cast it to a string.
+Using the variable in a js string is very simple, cast the variable it to a string.
 ``` js
 const styles = `
     body {
