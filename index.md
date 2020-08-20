@@ -1,37 +1,93 @@
-## Welcome to GitHub Pages
+# Reactive CSS Properties
 
-You can use the [editor on GitHub](https://github.com/adam-cyclones/reactive-css-properties/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## The case for reactive-css-properties
+CSS in JavaScript is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+JavaScript and CSS can now share easily data bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles.
 
-### Markdown
+## Why reactive?
+If you open devtools, change a css variable, this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## What is the use case?
+- Change one variable and have JavaScript set an entire theme's worth of variables.
+- Update a css variable based on screen position or any sensor / event that JavaScript can access that CSS cannot
+- Get CSS variables values and use them in logic
+- Separation of concerns between styling and business logic
+- Dry code
+- CSS can be used as configuration which is isomorphic
+- More efficient and natural feeling workflow 
+- Encourage developers to think differently and style variables instead of individual elements on the page, it might just change how you create apps and websites
 
-```markdown
-Syntax highlighted code block
+Related reading:
+- [Javascript Enhanced scss mixins concepts explained](https://dev.to/adam_cyclones/javascript-enhanced-scss-mixins-concepts-explained-3mpo)
+- [Reactive CSS Explained](https://dev.to/adam_cyclones/great-scott-reactive-css-231m)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+### Usage
+Set a css custom property.
+``` js
+import rCSSProps from "reactive-css-properties";
 
-1. Numbered
-2. List
+// rCSSProps object has no undefined properties and will always yield a class-like callable object.
+// The name of your destructured variable is the name of the css variable in snake-case
+const { themeTextColor } = rCSSProps();
 
-**Bold** and _Italic_ and `Code` text
+// insert `--theme-text-color: #000;` into the root element `style` (<html> in this example).
+themeTextColor("#000");
 
-[Link](url) and ![Image](src)
+// or provide a fallback for browsers which do not support css custom properties
+themeTextColor("#000", "#000");
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Watch for changes
+``` js
+// You must subscribe before changing values
+themeTextColor.subscribe((change) => {
+  console.log("Im watching for theme text changes", change);
+});
+```
+Other useful properties
+``` js
+// Get the full var() to insert into css  
+themeTextColor.getUsage();
+// Get the key
+themeTextColor.getKey();
+// Get the value currently, this is not reactive, use subscribe to get realtime values
+themeTextColor.getValue();
+// Get the fallback value currently, this is not reactive, use subscribe to get realtime values
+themeTextColor.getFallbackValue();
+// Get scope you optionally provided
+themeTextColor.getScope();
+```
+rCSSProps constructor details
+``` js
+rCSSProps(element, scopeString);
+```
+You can optionally provide an element to set the css variables onto, this provides a scope for this element and its descendants, You can also provide a scope string to prefix all variables with scope, this comes in handy whene you have a generated GUID and want to limit the scope to a component.
 
-### Jekyll Themes
+---
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/adam-cyclones/reactive-css-properties/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### How to use a reactive variable (optional)
+#### From stylesheets
+Use the variable within `css`, `sass` or anything which results in css
+``` css
+body {
+    color: var(--theme-text-color);
+}
+```
+You could even define the variable before JavaScript has loaded, this is recommended to provide some styling, also to help keep track of variables in use.
+``` css
+:root {
+    --theme-text-color: #C0FF33;
+}
+```
+#### From JavaScript
+CSS in JavaScript is not essential, however it is useful, with the workflow described above, you provide styling with or without JavaScript, removing one of the major cases against CSS in JS.
+Using the variable is in a js string is simple, just cast it to a string.
+``` js
+const styles = `
+    body {
+        color: ${themeTextColor};
+    }
+`
+```
