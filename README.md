@@ -1,6 +1,6 @@
 <center>
 <h1>Reactive CSS Properties</h1>
-<p>Drive business logic from your styling and styling from your business logic. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
+<p>A tiny library to help drive business logic from your styling and styling from your business logic. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
 <span>––</span>
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Report a bug</a>
@@ -13,7 +13,7 @@ CSS in JavaScript is not essential with the advent of CSS custom properties (CSS
 JavaScript and CSS can now share data easily and bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles.
 
 ## Why reactive?
-If you open devtools, change a css variable, this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
+If you open devtools and change the value a css variable (other examples: change from a breakpoint or :hover... or anything else), this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using this library reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
 
 ## What is the use case?
 - Kill FOUK (flash of un-styled content) for good.
