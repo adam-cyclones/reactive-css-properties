@@ -10,7 +10,7 @@
 ## The case for reactive-css-properties
 CSS in JavaScript is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets.
 
-JavaScript and CSS can now share easily data bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles.
+JavaScript and CSS can now share data easily and bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles.
 
 ## Why reactive?
 If you open devtools, change a css variable, this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
