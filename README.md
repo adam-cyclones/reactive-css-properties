@@ -1,7 +1,7 @@
 <p align="center">
 <img width="100px" height="100px" alt="Reactive css logo" src="docs/assets/reactive-css-logo.svg"/>
 <h1 align="center">Reactive CSS Properties</h1>
-<p>A tiny library to superchage your styling workflow. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
+<p>A tiny library to superchage your styling workflow. With Reactive CSS Properties (re.css) you can set css custom properties and react to changes in realtime from JavaScript</p>
 </p>
 <p align="center">
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
@@ -11,7 +11,7 @@
 
 
 
-## The case for reactive-css-properties (re.css for short)
+## The case for re.css
 You can think of modern JavaScript having two main responsibilities, updating business logic and updating styling, The trouble with the latter is that this adds extra overhead and new problems to overcome, re.css sets out that it is css's responsibility to update styling and JavaScript should only have a pointer, a way to cheeply make changes, not to elements in the DOM but variables on mass.
 
 CSS-in-JS is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets, this has important performance and UX implications, reducing the time to first contentful paint and also the amount of work components need to do on update.
