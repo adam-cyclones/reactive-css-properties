@@ -10,7 +10,6 @@
 </p>
 
 
-
 ## The case for re.css
 You can think of modern JavaScript having two main responsibilities, updating business logic and updating styling, The trouble with the latter is that this adds extra overhead and new problems to overcome, re.css sets out that it is css's responsibility to update styling and JavaScript should only have a pointer, a way to cheeply make changes, not to elements in the DOM but variables on mass.
 
@@ -43,6 +42,16 @@ As IE11 does not support css custom properties (sort of), at the moment it is no
 - [Javascript Enhanced scss mixins concepts explained](https://dev.to/adam_cyclones/javascript-enhanced-scss-mixins-concepts-explained-3mpo)
 - [Reactive CSS Explained](https://dev.to/adam_cyclones/great-scott-reactive-css-231m)
 
+
+## Getting started
+### Installation
+```
+yarn add reactive-css-properties
+
+# or
+
+npm i reactive-css-properties
+```
 
 ### Usage
 Set a css custom property.
