@@ -1,7 +1,7 @@
 <p align="center">
 <img width="100px" height="100px" alt="Reactive css logo" src="docs/assets/reactive-css-logo.svg"/>
 <h1 align="center">Reactive CSS Properties</h1>
-<p>A tiny library to help drive business logic from your styling and styling from your business logic. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
+<p>A tiny library to superchage your styling workflow. With Reactive CSS Properties you can set css custom properties and react to changes in realtime from JavaScript</p>
 </p>
 <p align="center">
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
@@ -11,13 +11,18 @@
 
 
 
-## The case for reactive-css-properties
-CSS in JavaScript is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets.
+## The case for reactive-css-properties (re.css for short)
+You can think of modern JavaScript having two main responsibilities, updating business logic and updating styling, The trouble with the latter is that this adds extra overhead and new problems to overcome, re.css sets out that it is css's responsibility to update styling and JavaScript should only have a pointer, a way to cheeply make changes, not to elements in the DOM but variables on mass.
 
-JavaScript and CSS can now share data easily and bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles.
+CSS-in-JS is not essential with the advent of CSS custom properties (CSS variables), This is because a developer can `set` and `get` css custom properties from JavaScript or update existing variables defined in stylesheets, this has important performance and UX implications, reducing the time to first contentful paint and also the amount of work components need to do on update.
+
+JavaScript and CSS can now share data easily and bi-directionally, the result is that styles can remain in stylesheets and JavaScript can continue to add the gloss and sparkles ✨, but that is not enough, we need reactivity.
 
 ## Why reactive?
-If you open devtools and change the value a css variable (other examples: change from a breakpoint or :hover... or anything else), this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, Using this library reactive-css-properties, an observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
+If you open devtools and change the value a css variable (other examples: change from a breakpoint or :hover... or anything else), this change happens in realtime, JavaScript is unable to detect this change. So we need a workaround, using re.css reactive-css-properties this now becomes a reality.
+
+### How it works?
+An observable gets set to watch for `style` attribute changes of the specified root element, JavaScript can then respond in realtime, diffing the `oldValue` vs `value` then calling a function if changes have been detected.
 
 ## What is the use case?
 - Kill FOUK (flash of un-styled content) for good.
@@ -53,7 +58,7 @@ themeTextColor("#000");
 themeTextColor("#000", "#000");
 ```
 
-#### Watch for changes
+#### React to css changes
 ``` js
 // any themeTextColor calls after this subscription will become reactive
 themeTextColor.subscribe((change) => {
@@ -61,7 +66,7 @@ themeTextColor.subscribe((change) => {
   themeTextBackground('#000');
 });
 ```
-#### Other useful properties
+#### Methods
 ``` js
 // Get the full var() to insert into css  
 themeTextColor.getUsage();
