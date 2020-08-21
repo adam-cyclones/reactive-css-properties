@@ -46,11 +46,11 @@ As IE11 does not support css custom properties (sort of), at the moment it is no
 ## Getting started
 ### Installation
 ``` sh
-yarn add reactive-css-properties
+yarn add reactive-css-properties --production
 
 # or
 
-npm i reactive-css-properties
+npm i reactive-css-properties --only=production
 ```
 
 ### Usage
