@@ -45,7 +45,7 @@ As IE11 does not support css custom properties (sort of), at the moment it is no
 
 ## Getting started
 ### Installation
-```
+``` sh
 yarn add reactive-css-properties
 
 # or
@@ -123,6 +123,9 @@ const styles = `
     }
 `
 ```
+
+#### From Typescript
+1st class Typescript support for consumers, and our source code is also wrote in TypeScript. The usage is the same as JavaScript and fully typed. Any issues, PR's Welcome!  
 
 ## Use with my favourite framework
 - Vue - Port in progress
