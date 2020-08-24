@@ -11,9 +11,9 @@
 
 **Table of contents**
 - [The case for re.css](#the-case-for-recss)
-- [Why reactive?](#why-reactive-)
-  - [How it works?](#how-it-works-)
-- [What is the use case?](#what-is-the-use-case-)
+- [Why reactive?](#why-reactive)
+  - [How it works?](#how-it-works)
+- [What is the use case?](#what-is-the-use-case)
 - [Browser support](#browser-support)
 - [Getting started](#getting-started)
   - [Installation](#installation)
@@ -21,12 +21,12 @@
     - [Reacting to css changes](#reacting-to-css-changes)
     - [Methods](#methods)
     - [reCSSProps constructor details](#recssprops-constructor-details)
-  - [How to use a reactive variable (optional)](#how-to-use-a-reactive-variable--optional-)
+  - [How to use a reactive variable](#how-to-use-a-reactive-variable-optional)
     - [From stylesheets](#from-stylesheets)
     - [From JavaScript](#from-javascript)
     - [From Typescript](#from-typescript)
 - [Use with my favourite framework](#use-with-my-favourite-framework)
-- [Where are the tutorials, examples, perf metrics and style guide?](#where-are-the-tutorials--examples--perf-metrics-and-style-guide)
+- [Where are the tutorials, examples, perf metrics and style guide?](#where-are-the-tutorials-examples-perf-metrics-and-style-guide)
 - [Why should I help?](#why-should-i-help)
 
 
