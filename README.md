@@ -1,12 +1,14 @@
 <p align="center">
 <img width="100px" height="100px" alt="Reactive css logo" src="docs/assets/reactive-css-logo.svg"/>
 <h1 align="center">Reactive CSS Properties</h1>
-<p>A tiny library to superchage your styling workflow. With Reactive CSS Properties (re.css) you can set css custom properties and react to changes in realtime from JavaScript</p>
+<p>A tiny library to supercharge your styling workflow. With Reactive CSS Properties (re.css) you can set css custom properties and react to changes in realtime from JavaScript</p>
 </p>
 <p align="center">
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
 <span>-</span>
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/issues">Report a bug</a>
+<span>-</span>
+<a target="_blank" href="https://adam-cyclones.github.io/https://github.com/adam-cyclones/reactive-css-properties#use-with-my-favourite-framework">Supported Frameworks</a>
 </p>
 
 **Table of contents**
