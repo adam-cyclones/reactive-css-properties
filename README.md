@@ -9,6 +9,26 @@
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Report a bug</a>
 </p>
 
+**Table of contents**
+- [The case for re.css](#the-case-for-recss)
+- [Why reactive?](#why-reactive-)
+  - [How it works?](#how-it-works-)
+- [What is the use case?](#what-is-the-use-case-)
+- [Browser support](#browser-support)
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Reacting to css changes](#reacting-to-css-changes)
+    - [Methods](#methods)
+    - [reCSSProps constructor details](#recssprops-constructor-details)
+  - [How to use a reactive variable (optional)](#how-to-use-a-reactive-variable--optional-)
+    - [From stylesheets](#from-stylesheets)
+    - [From JavaScript](#from-javascript)
+    - [From Typescript](#from-typescript)
+- [Use with my favourite framework](#use-with-my-favourite-framework)
+- [Where are the tutorials, examples, perf metrics and style guide?](#where-are-the-tutorials--examples--perf-metrics-and-style-guide)
+- [Why should I help?](#why-should-i-help)
+
 
 ## The case for re.css
 You can think of modern JavaScript having two main responsibilities, updating business logic and updating styling, The trouble with the latter is that this adds extra overhead and new problems to overcome, re.css sets out that it is css's responsibility to update styling and JavaScript should only have a pointer, a way to cheeply make changes, not to elements in the DOM but variables on mass.
