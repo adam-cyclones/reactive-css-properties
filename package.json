@@ -4,14 +4,27 @@
   "description": "Set css custom properties and react to changes in realtime from JavaScript",
   "main": "target/commonjs/index.js",
   "module": "target/esm/index.js",
+  "config": {
+    "examplePort": 9000
+  },
   "scripts": {
     "dev": "tsc -b tsconfig.commonjs.json tsconfig.esm.json -w",
     "build": "tsc -b tsconfig.commonjs.json tsconfig.esm.json",
-    "test": "jest"
+    "test-unit": "jest",
+    "example-serve": "yarn dev & yarn example-build -w & webpack-dev-server --env.port=$npm_package_config_examplePort",
+    "example-build": "webpack --env.port=$npm_package_config_examplePort",
+    "example-test-e2e": "jest -c jest-firefox.config.js --port=$npm_package_config_examplePort"
   },
   "devDependencies": {
     "jest": "26.4.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "webpack-cli": "^3.3.12",
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0",
+    "playwright": "^1.3.0",
+    "jest-playwright-preset": "^1.3.1",
+    "playwright-firefox": "^1.3.0",
+    "copy-webpack-plugin": "^6.0.3"
   },
   "repository": "https://github.com/adam-cyclones/reactive-css-properties",
   "author": "Adam Crockett",
