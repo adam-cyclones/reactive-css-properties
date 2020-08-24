@@ -148,7 +148,7 @@ const styles = `
 1st class Typescript support for consumers, and our source code is also wrote in TypeScript. The usage is the same as JavaScript and fully typed. Any issues, PR's Welcome!  
 
 ## Use with my favourite framework
-- Vue - Port in progress
+- [Vue](https://github.com/adam-cyclones/vue-reactive-css-properties)
 - React - **Planned**
 - Angular - **Planned**
 - Lit HTML / Lit Element - **Fully supported**
