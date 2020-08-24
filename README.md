@@ -8,7 +8,7 @@
 <span>-</span>
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/issues">Report a bug</a>
 <span>-</span>
-<a target="_blank" href="https://adam-cyclones.github.io/https://github.com/adam-cyclones/reactive-css-properties#use-with-my-favourite-framework">Supported Frameworks</a>
+<a target="_blank" href="https://github.com/adam-cyclones/reactive-css-properties#use-with-my-favourite-framework">Supported frameworks</a>
 </p>
 
 **Table of contents**
