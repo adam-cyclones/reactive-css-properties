@@ -1,4 +1,3 @@
-import rxDom from "rx-dom";
 import { camelToSnakeCase } from "./utils/camelToSnakeCase";
 import { callable } from "./utils/Callable";
 import { StringCastable, IHasValueOf } from "./types/utils";
