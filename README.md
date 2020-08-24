@@ -6,7 +6,7 @@
 <p align="center">
 <a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/">Website</a>
 <span>-</span>
-<a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/labels/bug">Report a bug</a>
+<a target="_blank" href="https://adam-cyclones.github.io/reactive-css-properties/issues">Report a bug</a>
 </p>
 
 **Table of contents**
